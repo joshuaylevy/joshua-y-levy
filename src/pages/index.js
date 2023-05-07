@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Footer from '../components/footer'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -58,6 +59,8 @@ export default function Home() {
         </div>
         
       </div>
+      <Footer/>
+{/* 
 
       <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
         <a
@@ -135,7 +138,7 @@ export default function Home() {
             Instantly deploy your Next.js site to a shareable URL with Vercel.
           </p>
         </a>
-      </div>
+      </div> */}
     </main>
   )
 }
