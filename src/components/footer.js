@@ -16,7 +16,7 @@ export default function Footer(){
     ];
 
     return(
-        <div className="flex flex-col items-center space-y-12">
+        <div className="flex flex-col items-center space-y-12 sticky top-[100vh] pb-10">
             <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
                 {footerLinks.map(({ href, label, description }) => (
                     <div key = {href} className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">
@@ -30,13 +30,13 @@ export default function Footer(){
             </div>
             <div className = {`${monoSpace.className} bg-center text-grey-800 text-sm`}>
                <p>
-                H S S H D O L
+                H    S    S    H    D    O    L
                </p>
                <p>
-               N Y I K C R A
+                N    Y    I    K    C    R    A
                </p>
                <p>
-               D D N G A D X
+                D    D    N    G    A    D    X
                </p>
             </div>
         </div>
