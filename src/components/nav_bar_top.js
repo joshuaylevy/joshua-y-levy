@@ -31,7 +31,7 @@ export default function Navbar() {
                     <div key = {href}>
                         <Link href = {href}>
                             <p
-                                className = {`${inter.className} font-semibold`}
+                                className = {`${inter.className} font-semibold hover:-translate-y-1 ease-in duration-200`}
                             >
                                 {label}
                             </p>
