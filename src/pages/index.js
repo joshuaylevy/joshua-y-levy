@@ -40,105 +40,29 @@ export default function Home() {
               alt = "Joshua Levy Profile Picture"
               width = {400}
               height = {600}
-              className = ""
+              className = "rounded-2xl"
             />
           </div>
-          <div className = "relative flex flex-col space-y-5 max-w-sm">
-            <h1 className = "text-5xl font-bold text-justify">
-              Joshua Y. Levy
-            </h1>
-            <p className = "">
-              My name is Joshua Levy.
-            </p>
-            <p className = "text-justify">
-              I am currently a Research Professional working for Luigi Zingales at the University of Chicago&apos;s Booth School of Business and the Stigler Center. I am also an incoming Economics PhD student at the University of Southern California.
-            </p>
-
+          <div className = "relative flex flex-col justify-between space-y-5 max-w-sm content-end">
+            <div>
+              <h1 className = "text-5xl font-bold text-justify">
+                Joshua Y. Levy
+              </h1>  
+            </div>
+            <div className = "bg-neutral-300 rounded-lg self-auto">
+              <p>
+                My name is Joshua Levy.
+              </p>
+            </div>
+            <div className = "self-auto">
+              <p className = "text-justify">
+                I am currently a Research Professional working for Luigi Zingales at the University of Chicago&apos;s Booth School of Business and the Stigler Center. I am also an incoming Economics PhD student at the University of Southern California. My research interests lie at the intersection of spatial economics and political economy but I'm always excited to learn about other stuff too 😀
+              </p>
+            </div>
           </div>
-
         </div>
-        
       </div>
       <Footer/>
-{/* 
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="/cv"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            CV{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Research{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Thoughts{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Resources{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div> */}
     </main>
   )
 }
