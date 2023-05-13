@@ -11,7 +11,7 @@ const exampleList = [
 export default function CV() {
     return(        
         <Layout>
-            {exampleList.map(({ title, }) => (
+            {exampleList.map(({ title }) => (
                 <div key = {title}>
                     <p>
                         {title}
