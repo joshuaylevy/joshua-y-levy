@@ -32,7 +32,7 @@ export default function Home() {
       </div>
 
       <div className="relative flex place-items-center m-16 after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <div className = "relative flex flex-row flex-wrap lg:space-x-10">
+        <div className = "relative flex flex-row flex-wrap flex-grow gap-10 justify-evenly">
           <div className = "lg:scale-100 lg:max-w-none md:scale-0 md:max-w-0">
             <Image
               src = "/profile_picture_narrow.jpg"
@@ -42,9 +42,9 @@ export default function Home() {
               className = "rounded-2xl"
             />
           </div>
-          <div className = "relative flex flex-col justify-between space-y-5 max-w-sm content-end md:pt-10">
+          <div className = "relative flex flex-col justify-between space-y-5 max-w-md content-end lh: pt-0 md:pt-10">
             <div>
-              <h1 className = "text-5xl font-bold text-justify flex self-start">
+              <h1 className = "text-5xl font-bold text-wrap flex self-start">
                 Joshua Y. Levy
               </h1>  
             </div>
