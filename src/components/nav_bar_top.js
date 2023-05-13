@@ -23,8 +23,6 @@ export default function Navbar() {
                     // src = "/Shield_RegUse_Blk_RGB.png"
                     src = "/Shield_SmUse_Blk_RGB.png"
                     alt = "USC shield logo mark"
-                    // width = {345}
-                    // height = {388}
                     width = {172}
                     height = {195}
                     className = ""
