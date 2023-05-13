@@ -18,26 +18,32 @@ export default function Navbar() {
     console.log(router.pathname)
     return(
        <nav className="my-6">
-            <div className = "flex flex-row justify-between items-center max-w-4xl mx-auto py-5 max-h-10">
-                <Image
-                    // src = "/Shield_RegUse_Blk_RGB.png"
-                    src = "/Shield_SmUse_Blk_RGB.png"
-                    alt = "USC shield logo mark"
-                    width = {172}
-                    height = {195}
-                    className = ""
-                />
-                {links.map(({ label, href }) => (
-                    <div key = {href}>
-                        <Link href = {href}>
-                            <p
-                                className = {`${inter.className} font-semibold hover:-translate-y-1 ease-in duration-200`}
-                            >
-                                {label}
-                            </p>
-                        </Link>
+            <div className = "flex flex-row justify-between items-center mx-auto my-5 max-w-6xl max-h-20 relative">
+                <div>
+                    <div className = "self-auto max-h-full max-w-full justify-self-start relative">
+                        <Image
+                            // src = "/Shield_RegUse_Blk_RGB.png"
+                            src = "/Shield_SmUse_Blk_RGB.png"
+                            alt = "USC shield logo mark"
+                            width = {56}
+                            height = {64}
+                            className = "object-scale-down"
+                        />
                     </div>
-                ))}
+                </div>
+                <div className = "flex flex-row justify-end space-x-16 w-full max-w-9/12">
+                    {links.map(({ label, href }) => (
+                        <div key = {href}>
+                            <Link href = {href}>
+                                <p
+                                    className = {`${inter.className} font-semibold hover:-translate-y-1 ease-in duration-200`}
+                                >
+                                    {label}
+                                </p>
+                            </Link>
+                        </div>
+                    ))}
+                </div>
             </div>
 
 {/* 

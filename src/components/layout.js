@@ -3,7 +3,7 @@ import Footer from './footer.js'
 
 export default function Layout({ children }) {
     return (  
-        <div className="page-container flex flex-col h-screen px-10">
+        <div className="page-container flex flex-col h-screen px-24">
             <Navbar />
             <main>
                 <div className="flex flex-col place-items-start justify-between">
