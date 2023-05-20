@@ -42,7 +42,7 @@ export default function Home() {
               className = "rounded-2xl"
             />
           </div>
-          <div className = "relative flex flex-col justify-between space-y-5 max-w-md content-end lh: pt-0 md:pt-10">
+          <div className = "relative flex flex-col justify- justify-items-stretch space-y-5 max-w-md content-end lh: pt-0 md:pt-10">
             <div>
               <h1 className = "text-5xl font-bold text-wrap flex self-start">
                 Joshua Y. Levy

@@ -18,7 +18,7 @@ export default function Navbar() {
     console.log(router.pathname)
     return(
        <nav className="my-6">
-            <div className = "flex flex-row justify-between items-center mx-auto my-5 max-w-6xl max-h-20 relative">
+            <div className = "flex flex-row justify-between items-center mx-auto my-5 max-w-5xl max-h-20 relative">
                 <div>
                     <div className = "self-auto max-h-full max-w-full justify-self-start relative">
                         <Image
@@ -36,7 +36,7 @@ export default function Navbar() {
                         <div key = {href}>
                             <Link href = {href}>
                                 <p
-                                    className = {`${inter.className} font-semibold hover:-translate-y-1 ease-in duration-200`}
+                                    className = {`${inter.className} font-medium hover:-translate-y-1 ease-in duration-200`}
                                 >
                                     {label}
                                 </p>
