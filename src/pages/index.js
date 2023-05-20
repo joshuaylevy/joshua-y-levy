@@ -42,8 +42,8 @@ export default function Home() {
               className = "rounded-2xl"
             />
           </div>
-          <div className = "relative flex flex-col justify-around  max-w-md content-end lg: pt-0 md:pt-10">
-            
+          <div className = "relative flex flex-col justify-around  max-w-md content-end lg:pt-0 md:pt-10">
+
             <div>
               <h1 className = "text-5xl font-bold text-wrap flex self-start">
                 Joshua Y. Levy
@@ -57,6 +57,42 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+    <div className = "h-80 border-red-500 border-2 w-full max-w-8xl py-6 m-16 mt-0 grid grid-cols-12 grid-rows-6 gap-2">
+      <div className = "col-start-1 col-span-3 row-start-1 row-span-6 border-black border-2 rounded-lg" >
+         BIG BOX    
+      </div>
+
+      <div className = "col-start-4 col-span-2 row-start-1 row-span-3 border-black border-2 rounded-lg">
+        SMALL BOX
+      </div>
+
+      <div className = "col-start-6 col-span-2 row-start-1 row-span-3 border-black border-2 rounded-lg">
+        SMALL BOX
+      </div>
+      
+      <div className = "col-start-4 col-span-4 row-start-4 row-span-3 border-black border-2 rounded-lg">
+        WIDE BOX
+      </div>
+
+      <div className = "col-start-8 col-span-2 row-start-1 row-span-6 border-black border-2 rounded-lg">
+        TALL BOX
+      </div>
+
+      <div className = "col-start-10 col-span-3 row-start-1 row-span-6 border-black border-2 rounded-lg" >
+         BIG BOX    
+      </div>
+
+      {/* <div className = "col-start-">
+        WIDE BOX
+      </div> */}
+
+    
+
+
+    </div>
+
+
       <Footer/>
     </main>
   )
