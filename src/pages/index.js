@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import Footer from '../components/footer'
+import { CarouselBigBox, CarouselSmallBox, CarouselTallBox, CarouselWideBox
+ } from '../components/carouselBoxes';
 import { Inter } from 'next/font/google'
 import { IoLogoTwitter } from 'react-icons/io'
 
@@ -59,10 +61,40 @@ export default function Home() {
       </div>
 
     <div className = "h-80 border-red-500 border-2 w-full max-w-8xl py-6 m-16 mt-0 grid grid-cols-12 grid-rows-6 gap-2">
-      <div className = "col-start-1 col-span-3 row-start-1 row-span-6 border-black border-2 rounded-lg" >
+      {/* <div className = "col-start-1 col-span-3 row-start-1 row-span-6 border-black border-2 rounded-lg" >
          BIG BOX    
-      </div>
+      </div> */}
 
+      <CarouselBigBox
+        colStart = {1}
+        rowStart = {1}
+      />
+
+      <CarouselSmallBox
+        colStart = {4}
+        rowStart = {1} 
+      />
+      <CarouselSmallBox
+        colStart = {6}
+        rowStart = {1} 
+      />
+
+      <CarouselWideBox
+        colStart={4}
+        rowStart={4}
+      />
+
+      <CarouselTallBox
+        colStart={8}
+        rowStart={1}
+      />
+
+      <CarouselBigBox
+        colStart={10}
+        rowStart={1}
+      />
+
+{/* 
       <div className = "col-start-4 col-span-2 row-start-1 row-span-3 border-black border-2 rounded-lg">
         SMALL BOX
       </div>
@@ -81,11 +113,8 @@ export default function Home() {
 
       <div className = "col-start-10 col-span-3 row-start-1 row-span-6 border-black border-2 rounded-lg" >
          BIG BOX    
-      </div>
-
-      {/* <div className = "col-start-">
-        WIDE BOX
       </div> */}
+
 
     
 
