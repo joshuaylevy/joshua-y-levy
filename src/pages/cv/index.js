@@ -1,4 +1,5 @@
 import Layout from "../../components/layout.js";
+import DownloadButton from "../../components/downloadButton.js";
 import { Inter } from "next/font/google";
 // import { Document } from "react-pdf";
 
@@ -15,7 +16,13 @@ export default function CV() {
                     </h1>
                 </div>
 
-                <object data = "/JoshuaLevy_CV.pdf" type = "application/pdf" width = "100%" height = "700px" className = "my-10">
+                <div>
+                    <DownloadButton
+                        linkTarget = "/"
+                        newTabOpt = {true}
+                    />
+                </div>
+                <object data = "/JoshuaLevy_CV.pdf" type = "application/pdf" width = "100%" height = "700px" className = "my-10 lg:scale-100 md:scale-0 sm:scale-0">
                     <p>
                         Unable to load .PDF
                     </p>
