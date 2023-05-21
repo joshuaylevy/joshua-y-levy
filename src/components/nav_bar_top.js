@@ -21,14 +21,16 @@ export default function Navbar() {
             <div className = "flex flex-row justify-between items-center mx-0 my-5 w-full max-h-20 relative">
                 <div>
                     <div className = "self-auto max-h-full max-w-full justify-self-start relative">
-                        <Image
-                            // src = "/Shield_RegUse_Blk_RGB.png"
-                            src = "/Shield_SmUse_Blk_RGB.png"
-                            alt = "USC shield logo mark"
-                            width = {56}
-                            height = {64}
-                            className = "object-scale-down"
-                        />
+                        <Link href = "/">
+                            <Image
+                                // src = "/Shield_RegUse_Blk_RGB.png"
+                                src = "/Shield_SmUse_Blk_RGB.png"
+                                alt = "USC shield logo mark"
+                                width = {56}
+                                height = {64}
+                                className = "object-scale-down"
+                            />
+                        </Link>
                     </div>
                 </div>
                 <div className = "flex flex-row justify-end space-x-16 w-full max-w-9/12">
