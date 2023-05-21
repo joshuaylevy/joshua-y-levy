@@ -5,24 +5,6 @@ import {
   CarouselWideBox,
 } from "./carouselBoxes";
 
-const boxDimensions = {
-  big: {
-    cols: 3,
-    rows: 6,
-  },
-  small: {
-    cols: 2,
-    rows: 3,
-  },
-  wide: {
-    cols: 4,
-    rows: 3,
-  },
-  tall: {
-    cols: 2,
-    rows: 6,
-  },
-};
 
 // eventually this is going to be an API call that fetches
 // a sample of things that are eligible to go in the carousel
@@ -65,7 +47,6 @@ let displayObjects = [
   },
 ];
 
-
 let carouselBoxOptions = [
   CarouselBigBox,
   CarouselSmallBox,
@@ -77,7 +58,6 @@ function getRandomComponent() {
     let randomNum = Math.floor(Math.random() * carouselBoxOptions.length);
     return carouselBoxOptions[randomNum];
 }
-
 
 export default function Carousel({}) {
   return (
