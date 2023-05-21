@@ -18,7 +18,7 @@ export default function Navbar() {
     console.log(router.pathname)
     return(
        <nav className="my-6">
-            <div className = "flex flex-row justify-between items-center mx-auto my-5 max-w-5xl max-h-20 relative">
+            <div className = "flex flex-row justify-between items-center mx-0 my-5 w-full max-h-20 relative">
                 <div>
                     <div className = "self-auto max-h-full max-w-full justify-self-start relative">
                         <Image
