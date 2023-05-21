@@ -4,7 +4,9 @@ import {
   CarouselTallBox,
   CarouselWideBox,
 } from "./carouselBoxes";
+import { Inter } from 'next/font/google';
 
+const inter = Inter({ subsets: ["latin"] })
 
 // eventually this is going to be an API call that fetches
 // a sample of things that are eligible to go in the carousel
@@ -61,8 +63,9 @@ function getRandomComponent() {
 
 export default function Carousel({}) {
   return (
-    <div className="h-80 border-red-500 border-2 w-full max-w-8xl py-6 m-16 mt-0 grid grid-flow-col-dense grid-row-12 grid-rows-6 gap-2">
-      {displayObjects.map((tile, index) => {
+    <div className="h-80 min-w-full py-6 mx-16 mb-16 mt-0 grid grid-flow-col-dense grid-row-12 grid-rows-6 gap-4">
+        
+    {displayObjects.map((tile, index) => {
         const RandomComponent = getRandomComponent();
         return (
             <RandomComponent
@@ -70,8 +73,8 @@ export default function Carousel({}) {
                 title = {tile.title}
             />         
         )
-      })}
-      
+    })}
+    
     </div>
   );
 }
