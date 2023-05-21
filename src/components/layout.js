@@ -3,13 +3,11 @@ import Footer from './footer.js'
 
 export default function Layout({ children }) {
     return (  
-        <div className="page-container flex flex-col h-screen px-24">
+        <div className="flex flex-col px-24">
             <Navbar />
             <main>
-                <div className="flex flex-col place-items-start justify-between">
-                    <div>
-                        {children}
-                    </div>
+                <div className="flex flex-col place-items-start justify-between mx-16 max-w-8xl">
+                    {children}
                 </div>
             </main>
             <Footer />
