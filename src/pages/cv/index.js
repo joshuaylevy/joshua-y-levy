@@ -37,5 +37,5 @@ export default function CV() {
 
             </div>
         </Layout>
-    )
-}
+        )
+}   
