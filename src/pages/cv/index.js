@@ -1,7 +1,6 @@
 import Layout from "../../components/layout.js";
 import DownloadButton from "../../components/utilityComponents/downloadButton.js";
 import { Inter } from "next/font/google";
-// import { Document } from "react-pdf";
 
 const inter = Inter({ subsets : ["latin"] })
 

@@ -6,7 +6,7 @@ export default function Layout({ children }) {
         <div className="flex flex-col px-24 min-h-screen">
             <Navbar />
             <main>
-                <div className="flex flex-col place-items-start justify-between mx-16 max-w-8xl">
+                <div className="flex flex-col place-items-start justify-between mx-24 max-w-8xl">
                     {children}
                 </div>
             </main>
