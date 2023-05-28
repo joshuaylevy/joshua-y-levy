@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import SwivelChevronButton from './swivelAccordionButton';
 import DownloadButton from './downloadButton';
+import GeneralHoverButton from './generalHoverButton';
 
 const inter = Inter({ subsets : ["latin"] })
 
@@ -54,6 +55,11 @@ export default function PaperDescriptionAccordion({ title, year, authorsList, ab
                         <DownloadButton
                             linkTarget = {downloadPath}
                             newTabOpt = {downloadTabOpt}
+                        />
+                        <GeneralHoverButton
+                            buttonText = "Blog"
+                            link = "/"
+                            newTabOpt = {true}
                         />
                     </div>
 
