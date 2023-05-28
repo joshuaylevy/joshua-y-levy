@@ -12,13 +12,17 @@ let examplePapers = [
         title : "Working paper title 1: evidence from test",
         year : 2023,
         authors : ["Joshua Levy", "test"],
-        abstract : "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia veniam reprehenderit nam assumenda voluptatem ut. Ipsum eius dicta, officiis quaerat iure quos dolorum accusantium ducimus in illum vero commodi pariatur? Impedit autem esse nostrum quasi, fugiat a aut error cumque quidem maiores doloremque est numquam praesentium eos voluptatem amet! Repudiandae, mollitia id reprehenderit a ab odit!"
+        abstract : "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia veniam reprehenderit nam assumenda voluptatem ut. Ipsum eius dicta, officiis quaerat iure quos dolorum accusantium ducimus in illum vero commodi pariatur? Impedit autem esse nostrum quasi, fugiat a aut error cumque quidem maiores doloremque est numquam praesentium eos voluptatem amet! Repudiandae, mollitia id reprehenderit a ab odit!",
+        downloadPath : "/",
+        downloadTabOpt : true
     },
     {
         title : "Second working paper title: theory and practice",
         year : 2023,
         authors : ["Joshua Levy", "test"],
-        abstract : "orem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia veniam reprehenderit nam assumenda voluptatem ut. Ipsum eius dicta, officiis quaerat iure quos dolorum accusantium ducimus in illum vero commodi pariatur? Impedit autem esse nostrum quasi, fugiat a aut error cumque quidem maiores doloremque est numquam praesentium eos voluptatem amet! Repudiandae, mollitia id reprehenderit a ab odit!"
+        abstract : "orem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia veniam reprehenderit nam assumenda voluptatem ut. Ipsum eius dicta, officiis quaerat iure quos dolorum accusantium ducimus in illum vero commodi pariatur? Impedit autem esse nostrum quasi, fugiat a aut error cumque quidem maiores doloremque est numquam praesentium eos voluptatem amet! Repudiandae, mollitia id reprehenderit a ab odit!",
+        downloadPath : "/",
+        downloadTabOpt : true
     }
 ]
 
@@ -44,6 +48,8 @@ export default function Research() {
                             year = {paper.year}
                             authorsList = {paper.authors}
                             abstract = {paper.abstract}
+                            downloadPath = {paper.downloadPath}
+                            downloadTabOpt = {paper.downloadTabOpt}
                         />
                     )
                 })}
