@@ -25,7 +25,7 @@ export default function Blog({ postsMetadata }) {
                     </h1>
                 </div>
             </div>
-            <div className = "flex flex-col" >
+            <div className = "flex flex-col mb-5" >
                 {postsMetadata.map((post) => {
                     return(
                         <div key = {post.slug} className = "my-5">
