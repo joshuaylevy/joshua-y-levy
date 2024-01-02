@@ -1,7 +1,7 @@
 import Layout from "../../components/layout.js";
 import Link from "next/link.js";
 import { Inter } from "next/font/google";
-import { getPostsMetaData } from "/posts/lib/loadPosts.js";
+import { getPostsMetaData } from "./lib/loadPosts.js";
 
 const inter = Inter({ subsets : ["latin"] })
 
@@ -9,6 +9,7 @@ const inter = Inter({ subsets : ["latin"] })
 
 export async function getStaticProps() {
     const postsMetadata = await getPostsMetaData();
+    console.log(postsMetadata)
     return {
         props: { postsMetadata }
       };
@@ -30,7 +31,7 @@ export default function Blog({ postsMetadata }) {
                     return(
                         <div key = {post.slug} className = "my-5">
                             <Link
-                                href = {`/blog/${post.slug}`}
+                                href = {`/blog/posts/${post.slug}`}
                                 target = ""
                                 className = {` ${inter.className} font-bold text-2xl hover:text-blue-500 ease-in duration-100`}
                             >
