@@ -16,7 +16,7 @@ export default function Layout ({children, ...props}) {
         <div className="flex flex-col px-24 min-h-screen">
             <Navbar />
             <main>
-                <div className="flex flex-col place-items-start justify-between mx-24 max-w-8xl">
+                <div className="flex flex-col place-items-start justify-between mx-40 max-w-8xl">
                 <MDXProvider components={components}>
                     {children}
                 </MDXProvider>
