@@ -38,7 +38,7 @@ export default function Blog({ postsMetadata }) {
                                 {post.title}
                             
                             </Link>
-                            <div>
+                            <div className="my-2">
                                 {`${post.author}  |  ${post.date}`}
                             </div>
                             <div>

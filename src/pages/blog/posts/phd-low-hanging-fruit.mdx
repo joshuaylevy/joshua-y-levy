@@ -12,8 +12,66 @@ import Layout from "src/components/mdxLayout.js";
 
 #### By Joshua Levy | May 23rd, 2023
 
-##
+## Subheading H2
+
+Do we need to put regular text in-between headings?
+
+### Subheading 3
 
 Lorem ipsum dolor something something something
+
+This is some more regular text.
+
+This should be some **bold** text and this should be the _italic_
+alternative. I can't really tell what makes this work or not.
+
+Maybe we need some more space. Let's try to insert a [link](https://www.nytimes.com). We are also going to try an internal [link](/public/profile_picture.jpg) to test internal paths. Below that we're going to embed an image:
+
+![Alt text for image](/profile_picture.jpg)
+
+> Here's a block quote, in theory
+
+Finally let's try out a code in-line as `this_should_be` and as a block
+
+```python
+%Test codeblock
+import os
+import pandas as pd
+
+random_state_seed = 987654321
+task_status_df = pd.read_csv('task_status.csv')
+task_scores_df = pd.read_csv('task_scores.csv')
+
+task1a_answer_key_df = pd.read_csv('task1a_joshua_levy.csv')
+task1b_answer_key_df = pd.read_csv('task1b_joshua_levy.csv')
+task1b_misc_df = pd.read_csv('task1b_joshua_levy_MISC_OBS.csv')
+
+### First, identify if there are any new tasks to be scored.
+def candidates_to_score(status_df: pd.DataFrame) -> pd.DataFrame:
+    to_score_df = status_df.copy()
+    to_score_df = to_score_df[to_score_df.task1a_status == 2 | to_score_df.task1b_status == 2]
+
+    return to_score_df.iterrows()
+
+def update_score_status(status_df: pd.DataFrame, candidate_name: str):
+    updated_status_df = status_df.copy()
+
+    updated_status_df.loc[updated_status_df.candidate_name == candidate_name, 'task1a_status'] = 3
+    updated_status_df.loc[updated_status_df.candidate_name == candidate_name, 'task1b_status'] = 3
+
+    updated_status_df.to_csv('task_status.csv', index=False, encoding='utf-8')
+
+    return
+
+```
+
+and a little bit of math: $a^2 + b^2 = c^2$
+
+```math
+\begin{bmatrix}
+   a & b \\
+   c & d
+\end{bmatrix}
+```
 
 export default ({ children }) => <Layout> {children}</Layout>;
