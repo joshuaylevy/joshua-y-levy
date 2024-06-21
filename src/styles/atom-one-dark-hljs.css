@@ -26,13 +26,6 @@ pre:has(.hljs),
 .hljs {
   color: #abb2bf;
   background: #282c34;
-  width: 100%;
-  font-size: 0.9rem;
-  padding-top: 0.5rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  border-radius: 10px;
-  overflow: auto
 }
 
 .hljs-comment,

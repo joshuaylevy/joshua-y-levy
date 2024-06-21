@@ -12,6 +12,8 @@ const components = {
     h4: Heading.H4,
     p: BaseStylings.Para,
     a: BaseStylings.LinkInLine,
+    pre: BaseStylings.Pre,
+    blockquote: BaseStylings.BlockQuote
   };
   
 export default function Layout ({children, ...props}) {
@@ -20,7 +22,7 @@ export default function Layout ({children, ...props}) {
         <div className="flex flex-col px-24 min-h-screen">
             <Navbar />
             <main>
-                <div className="flex flex-col place-items-start justify-between mx-auto my-10 max-w-3xl">
+                <div className="flex flex-col place-items-start justify-between mx-auto  my-10 max-w-3xl">
                 <MDXProvider components={components}>
                     {children}
                 </MDXProvider>

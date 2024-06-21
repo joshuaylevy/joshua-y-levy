@@ -21,6 +21,7 @@ const withMDX = createMDX({
 // Syntax highlighting
 // Demos available here: https://highlightjs.org/demo
 // Downloadable and subsequently customizable .css files here https://highlightjs.org/demo
+// Good tutorial: https://gaudion.dev/blog/mdx-syntax-highlighting
 
 
 
