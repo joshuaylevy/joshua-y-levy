@@ -9,7 +9,7 @@ export default function CV() {
     return(        
         <Layout>
             <div className = "flex flex-col w-full">
-                <div className = "my-5">
+                <div className = "my-10">
                     <h1 className = {`${inter.className} font-bold text-4xl`}>
                         CV
                     </h1>

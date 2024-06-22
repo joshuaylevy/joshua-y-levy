@@ -19,7 +19,7 @@ export async function getStaticProps() {
 export default function Blog({ postsMetadata }) {
     return (
         <Layout>
-            <div className = "flex flex-col w-full mt-16">
+            <div className = "flex flex-col w-full">
                 <div className = "my-10">
                     <h1 className = {`${inter.className} font-bold text-4xl`}>
                         Thoughts

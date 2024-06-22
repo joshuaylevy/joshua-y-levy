@@ -29,7 +29,7 @@ let examplePapers = [
 export default function Research() {
     return(
         <Layout>
-            <div className = "flex flex-col w-full my-16">
+            <div className = "flex flex-col w-full">
                 <div className = "my-10">
                     <h1 className = {`${inter.className} font-bold text-4xl`}>
                         Research
