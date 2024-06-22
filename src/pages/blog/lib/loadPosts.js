@@ -7,7 +7,6 @@ export async function getPostsMetaData() {
     const files = fs.readdirSync(folder)
     const markdownPosts = files.filter((file) => file.endsWith("mdx"));
     
-    console.log(markdownPosts)
 
     return markdownPosts.map((post) => {
         const path = folder + post
@@ -16,10 +15,7 @@ export async function getPostsMetaData() {
         
         
         const grayMatter = matter(postFile)
-        // console.log(grayMatter)
         const metadata = grayMatter.data
-        console.log(metadata)
-
 
         return {
             title : metadata.title,

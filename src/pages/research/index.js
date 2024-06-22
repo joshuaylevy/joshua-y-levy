@@ -1,5 +1,4 @@
 import Layout from "@/components/layout.js";
-import DownloadButton from "@/components/utilityComponents/downloadButton.js";
 import PaperDescriptionAccordion from "@/components/utilityComponents/paperDescAccordion.js";
 import { Inter } from "next/font/google";
 
@@ -11,7 +10,6 @@ let examplePapers = [
     {
         title : "Working paper title 1: evidence from test",
         year : 2023,
-        // authors : ["Joshua Levy", "test"],
         authors : [
             {authorName : "Joshua Levy", authorWebsiteLink : "/", authorWebsiteLinkNewTabOpt : false},
             {authorName : "Filippo Lancieri", authorWebsiteLink : "/", authorWebsiteLinkNewTabOpt : true},

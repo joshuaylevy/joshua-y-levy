@@ -9,7 +9,6 @@ const inter = Inter({ subsets : ["latin"] })
 
 export async function getStaticProps() {
     const postsMetadata = await getPostsMetaData();
-    console.log(postsMetadata)
     return {
         props: { postsMetadata }
       };

@@ -9,10 +9,10 @@ const monoSpace = Space_Mono({ subsets: ['latin'] , weight : ["400"]})
 
 export default function Footer(){
     const footerLinks = [
-        { label : 'CV',  description : 'This is a placeholder CV description', href : '/cv'},
-        { label : 'Research',  description : 'This is a placeholder research description', href : '/research'},
-        { label : 'Thoughts',  description : 'This is a placeholder thoughts description', href : '/blog'},
-        { label : 'Resources',  description : 'This is a placeholder resources description', href : '/resources'}
+        { label : 'CV',  description : 'For a little bit of background', href : '/cv'},
+        { label : 'Research',  description : 'For more details on my work', href : '/research'},
+        { label : 'Thoughts',  description : 'For some idle musings', href : '/blog'},
+        { label : 'Resources',  description : 'For some potentially useful things', href : '/resources'}
     ];
 
     return(

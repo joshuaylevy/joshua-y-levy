@@ -39,6 +39,7 @@ export default function PaperDescriptionAccordion({ title, year, authorsList, ab
                             <Link
                                 href = {author.authorWebsiteLink}
                                 target = {author.authorWebsiteLinkNewTabOpt? "_blank" : ""}
+                                className = "hover:text-blue-500 ease-in duration-100"
                             >
                                 {author.authorName}
                             </Link>
@@ -55,7 +56,7 @@ export default function PaperDescriptionAccordion({ title, year, authorsList, ab
                     <p className="font-base text-md"> {paperStatus} </p>
                 </div>
             </div>
-            <div className = {`${isActive ? "max-h-60" : "max-h-0"} ${inter.className} overflow-hidden transition-[max-height]  duration-200 `}>
+            <div className = {`${isActive ? "max-h-auto" : "max-h-0"} ${inter.className} overflow-hidden transition-[max-height]  duration-200 `}>
                 <div className='flex flex-col space-y-3'>
                     <div className = "">
                         <p className = "text-justify">

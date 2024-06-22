@@ -16,7 +16,7 @@ export default function Home() {
           Get in touch with me&nbsp;
           <code className="font-mono font-bold">
             <a
-              href = "mailto:joshua.levy676@gmail.com"
+              href = "mailto:jylevy@usc.com"
             >
               here
             </a>
@@ -54,7 +54,7 @@ export default function Home() {
             </div>
             <div className = "self-auto">
               <p className = "text-justify">
-                I am currently a Research Professional working for Luigi Zingales at the University of Chicago&apos;s Booth School of Business and the Stigler Center. I am also an incoming Economics PhD student at the University of Southern California. My research interests lie at the intersection of spatial economics and political economy but I&apos;m always excited to learn about other stuff too 😀
+                I am currently an Economics PhD student at the University of Southern California. Formerly, I&apos;ve held research positions at the University of Chicago&apos; Booth School of Business and at the Carnegie Endowment for International Peace. My research interests lie at the intersection of spatial economics and political economy but I&apos;m always excited to learn about other stuff too 😀
               </p>
             </div>
           </div>

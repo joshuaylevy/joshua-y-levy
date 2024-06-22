@@ -15,7 +15,6 @@ export default function Navbar() {
         { label : 'Resources', href : '/resources'}
     ];
 
-    console.log(router.pathname)
     return(
        <nav className="my-6">
             <div className = "flex flex-row justify-between items-center mx-0 my-5 w-full max-h-20 relative">
