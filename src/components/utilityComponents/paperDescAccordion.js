@@ -8,11 +8,10 @@ import GeneralHoverButton from './generalHoverButton';
 const inter = Inter({ subsets : ["latin"] })
 
 
-export default function PaperDescriptionAccordion({ title, year, authorsList, abstract, downloadPath, downloadTabOpt }){
-
+export default function PaperDescriptionAccordion({ title, year, authorsList, abstract, paperStatus, journal, downloadPath, downloadTabOpt, otherButtons }){
     const [isActive, setIsActive] = useState(false);
     return(
-        <div className = "flex flex-col justify-between border-gray-300 border-b mb-4">
+        <div className = "flex flex-col justify-between border-gray-300 border-b mb-4 py-4">
             <div className = "grid grid-cols-12 justify-items-stretch items-end pb-3">
                 <div className = "col-span-9 justify-self-start">
                     <h3 className = {`${inter.className} font-semibold text-2xl`}>
@@ -37,12 +36,24 @@ export default function PaperDescriptionAccordion({ title, year, authorsList, ab
                 {authorsList.map((author, index) => {
                     return(
                         <div className = "h-10" key = {index}>
-                            <p className = {`${inter.className} font-base text-md`}>
-                                {author} 
-                            </p>
+                            <Link
+                                href = {author.authorWebsiteLink}
+                                target = {author.authorWebsiteLinkNewTabOpt? "_blank" : ""}
+                            >
+                                {author.authorName}
+                            </Link>
                         </div>
                     )
                 })}
+                <div>
+                    |
+                </div>
+                <div>
+                    <p className="font-base text-md italic"> {journal} </p>
+                </div>
+                <div>
+                    <p className="font-base text-md"> {paperStatus} </p>
+                </div>
             </div>
             <div className = {`${isActive ? "max-h-60" : "max-h-0"} ${inter.className} overflow-hidden transition-[max-height]  duration-200 `}>
                 <div className='flex flex-col space-y-3'>
@@ -56,11 +67,23 @@ export default function PaperDescriptionAccordion({ title, year, authorsList, ab
                             linkTarget = {downloadPath}
                             newTabOpt = {downloadTabOpt}
                         />
+                        {otherButtons.map((button, index) => {
+                            return(
+                                <div key = {index}>
+                                <GeneralHoverButton
+                                    buttonText = {button.buttonText}
+                                    link = {button.buttonLink}
+                                    newTabOpt = {button.buttonNewTabOpt}
+                                />
+                                </div>
+                            )
+                        })}
+{/* 
                         <GeneralHoverButton
                             buttonText = "Blog"
                             link = "/"
                             newTabOpt = {true}
-                        />
+                        /> */}
                     </div>
 
                 </div>
