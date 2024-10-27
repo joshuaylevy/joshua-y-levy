@@ -17,11 +17,11 @@ export default function CV() {
 
                 <div className = "flex flex-row justify-start items-center my-2 space-x-4">
                     <div className = "text-lg">
-                        Last updated: May 21st, 2023
+                        Last updated: October 26th, 2024
                     </div>
                     <div>
                         <DownloadButton
-                            linkTarget = "/"
+                            linkTarget = "/JoshuaLevy_CV.pdf"
                             newTabOpt = {true}
                         />
                     </div>
@@ -29,7 +29,7 @@ export default function CV() {
                 <div className = "my-10 lg:scale-100 md:scale-0 sm:scale-0 lg:h-auto md:h-0 sm:h-0">
                     <object data = "/JoshuaLevy_CV.pdf" type = "application/pdf" width = "100%" height = "700px">
                         <p>
-                            Unable to load .PDF
+                            Unable to load in-line .pdf. Please download instead.
                         </p>
                     </object>
                 </div>

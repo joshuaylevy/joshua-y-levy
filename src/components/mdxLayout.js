@@ -19,7 +19,7 @@ const components = {
 export default function Layout ({children, ...props}) {
 
     return (
-        <div className="flex flex-col px-24 min-h-screen">
+        <div className="flex flex-col mx-auto px-24 min-h-screen max-w-6    xl">
             <Navbar />
             <main>
                 <div className="flex flex-col place-items-start justify-between mx-auto  my-10 max-w-3xl">

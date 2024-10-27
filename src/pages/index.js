@@ -1,7 +1,5 @@
 import Image from 'next/image'
 import Footer from '../components/footer'
-// import { CarouselBigBox, CarouselSmallBox, CarouselTallBox, CarouselWideBox
-//  } from '../components/carouselBoxes';
 import Carousel from '../components/carousel'
 import { Inter } from 'next/font/google'
 import { IoLogoTwitter } from 'react-icons/io'
@@ -34,27 +32,27 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="relative flex place-items-center m-16 after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
+      <div className="relative flex place-items-center m-16 after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
         <div className = "relative flex flex-row flex-wrap flex-grow gap-10 justify-evenly">
-          <div className = "lg:scale-100 lg:max-w-none md:scale-0 md:max-w-0">
+          <div className = "lg:scale-100 lg:max-w-none md:scale-0 md:max-w-0 sm:scale-0 sm:max-w-0">
             <Image
-              src = "/profile_picture_narrow.jpg"
+              src = "/USC-Econ Student Directory Headshot crop.jpg"
               alt = "Joshua Levy Profile Picture"
               width = {400}
-              height = {600}
+              height = {500}
               className = "rounded-2xl"
             />
           </div>
           <div className = "relative flex flex-col justify-around  max-w-md content-end lg:pt-0 md:pt-10">
 
             <div>
-              <h1 className = "text-5xl font-bold text-wrap flex self-start">
+              <h1 className = "text-5xl font-bold text-wrap flex self-start pb-3 lg:pb-0">
                 Joshua Y. Levy
               </h1>  
             </div>
             <div className = "self-auto">
               <p className = "text-justify">
-                I am currently an Economics PhD student at the University of Southern California. Formerly, I&apos;ve held research positions at the University of Chicago&apos; Booth School of Business and at the Carnegie Endowment for International Peace. My research interests lie at the intersection of spatial economics and political economy but I&apos;m always excited to learn about other stuff too 😀
+                I am currently an Economics PhD student at the University of Southern California. Formerly, I&apos;ve held research positions at the University of Chicago&apos;s Booth School of Business and at the Carnegie Endowment for International Peace. My research interests lie at the intersection of spatial economics and political economy but I&apos;m always excited to learn about other stuff too 😀
               </p>
             </div>
           </div>
