@@ -10,8 +10,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Navbar() {
 
     const [isActive, setIsActive] = useState(false);
-    const links = [
-        { label : 'Home', href : '/' }, 
+    const links = [ 
         { label : 'CV', href : '/cv' },
         { label : 'Research', href : '/research' },
         { label : 'Thoughts', href : '/blog' },
@@ -36,7 +35,9 @@ export default function Navbar() {
                     </div>
                 </div>
                 <div className = "hidden md:flex md:flex-row md:flex-wrap md:justify-end lg:flex lg:flex-row lg:flex-wrap lg:justify-end space-x-16 w-full max-w-9/12">
-                    {links.map(({ label, href }) => (
+                    {links.map(({ label, href }) => 
+                    
+                    (
                         <div key = {href}>
                             <Link href = {href}>
                                 <p
@@ -61,6 +62,15 @@ export default function Navbar() {
 
             <div className = {`${isActive ? "max-h-auto" : "max-h-0"} ${inter.className} overflow-hidden border-gray-400 border-b`}>
                     <div className = "flex flex-col">
+                    <div key = "Home" className='center my-3 text-2xl'>
+                                <Link href = "/">
+                                    <p
+                                        className = {`${inter.className} font-medium hover:-translate-y-1 ease-in duration-200`}
+                                    >
+                                        Home
+                                    </p>
+                                </Link>
+                            </div>
                         {links.map(({ label, href }) => (
                             <div key = {href} className='center my-3 text-2xl'>
                                 <Link href = {href}>

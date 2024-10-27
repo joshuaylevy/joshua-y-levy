@@ -26,13 +26,13 @@ export default function PaperDescriptionAccordion({ title, year, authorsList, ab
                 <div className = "col-span-1 justify-self-end">
                     <button onClick={() => setIsActive(!isActive)} className = {`${isActive && "rotate-90 duration-200"}`}>
                         <SwivelChevronButton
-                            size = {20}
+                            size = {22}
                         />
                     </button>
                 </div>
             </div>
 
-            <div className = "flex flex-row justify-start h-10 space-x-4">
+            <div className = "flex flex-row flex-wrap justify-start h-fill space-x-4">
                 {authorsList.map((author, index) => {
                     return(
                         <div className = "h-10" key = {index}>
@@ -58,7 +58,7 @@ export default function PaperDescriptionAccordion({ title, year, authorsList, ab
             </div>
             <div className = {`${isActive ? "max-h-auto" : "max-h-0"} ${inter.className} overflow-hidden transition-[max-height]  duration-200 `}>
                 <div className='flex flex-col space-y-3'>
-                    <div className = "">
+                    <div className = "my-2">
                         <p className = "text-justify">
                             {abstract}
                         </p>
@@ -79,12 +79,6 @@ export default function PaperDescriptionAccordion({ title, year, authorsList, ab
                                 </div>
                             )
                         })}
-{/* 
-                        <GeneralHoverButton
-                            buttonText = "Blog"
-                            link = "/"
-                            newTabOpt = {true}
-                        /> */}
                     </div>
 
                 </div>
