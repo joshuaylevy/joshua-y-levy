@@ -1,6 +1,8 @@
 import '@/styles/globals.css'
 import "@/styles/atom-one-dark-hljs.css"
-import Head from 'next/head.js'
+import 'katex/dist/katex.min.css';
+
+import Head from 'next/head.js';
 
 export default function App({ Component, pageProps }) {
   return (

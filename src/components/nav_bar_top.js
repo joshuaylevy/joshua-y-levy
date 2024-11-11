@@ -34,7 +34,7 @@ export default function Navbar() {
                         </Link>
                     </div>
                 </div>
-                <div className = "hidden md:flex md:flex-row md:flex-wrap md:justify-end lg:flex lg:flex-row lg:flex-wrap lg:justify-end space-x-16 w-full max-w-9/12">
+                <div className = "hidden md:flex md:flex-row md:flex-wrap md:justify-end lg:flex lg:flex-row lg:flex-wrap lg:justify-end space-x-16 w-full max-w-10/12">
                     {links.map(({ label, href }) => 
                     
                     (

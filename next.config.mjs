@@ -1,5 +1,4 @@
 import remarkFrontmatter from "remark-frontmatter";
-// import nextMDX from "@next/mdx";
 import createMDX from "@next/mdx";
 import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 import remarkMath from 'remark-math'
@@ -12,8 +11,7 @@ const withMDX = createMDX({
     remarkPlugins : [remarkFrontmatter, remarkMdxFrontmatter, remarkMath],
     rehypePlugins: [rehypeKatex, rehypeHighlight]
   }
-}
-)
+})
 
 // Math support from KaTeX: https://katex.org/
 // Help: https://mdxjs.com/guides/math/
