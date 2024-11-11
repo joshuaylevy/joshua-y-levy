@@ -1,7 +1,7 @@
 import Layout from "@/components/layout.js";
 import PaperDescriptionAccordion from "@/components/utilityComponents/paperDescAccordion.js";
 import { Inter } from "next/font/google";
-import wp_list  from "./working_papers_db.js";
+import wp_list  from "../../libraries_dbs/working_papers_db.js";
 
 const inter = Inter({ subsets : ["latin"] })
 
