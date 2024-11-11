@@ -125,7 +125,7 @@ export default function Resources() {
                                 <Link
                                     href="https://web.stanford.edu/~gentzkow/research/CodeAndData.pdf"
                                     className = "text-gray-700 underline underline-offset-4 hover:text-blue-500 ease-in duration-100"
-                                > Coding and Data for the Social Sciences: A Practitioner's Guide
+                                > Coding and Data for the Social Sciences: A Practitioner&apos;s Guide
                                 </Link>
                                 &nbsp;by Gentzkow and Shaprio, a classic in the genre
                                 </li>
