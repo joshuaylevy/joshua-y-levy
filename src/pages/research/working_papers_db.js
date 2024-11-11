@@ -1,4 +1,4 @@
-export const wp_list = [
+export default wp_list = [
     {
         title : "The Conflict-of-Interest Discount in the Marketplace of Ideas",
         year : 2024,
