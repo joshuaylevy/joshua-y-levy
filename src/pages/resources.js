@@ -119,7 +119,7 @@ export default function Resources() {
 
                     <div>
                         <h2 className = {`${inter.className} font-bold text-2xl my-2`}>
-                            Coding & Workflow
+                            Coding &amp; Workflow
                         </h2>
                         <li>
                                 <Link
