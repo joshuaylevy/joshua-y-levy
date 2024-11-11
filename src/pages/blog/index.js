@@ -1,7 +1,7 @@
 import Layout from "../../components/layout.js";
 import Link from "next/link.js";
 import { Inter } from "next/font/google";
-import { getPostsMetaData } from "./lib/loadPosts.js";
+import { getPostsMetaData } from "../../scripts/blog/loadPosts.js";
 
 const inter = Inter({ subsets : ["latin"] })
 

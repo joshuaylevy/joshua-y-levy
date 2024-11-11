@@ -2,7 +2,7 @@ import Layout from "../../../components/layout.js";
 import Link from "next/link.js";
 import matter from "gray-matter"; 
 import { Inter } from "next/font/google";
-import { getPostsMetaData } from "../lib/loadPosts.js";
+import { getPostsMetaData } from "../../../scripts/blog/loadPosts.js";
 import { usePathname } from "next/navigation"
 
 
