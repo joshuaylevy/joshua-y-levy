@@ -18,6 +18,10 @@ const wp_list = [
         downloadTabOpt : true,
         otherButtons: [
             {buttonText : "SSRN", buttonLink: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4979205", buttonNewTabOpt : true}
+        ],
+        media : [
+            {mediaPubName : "PoliticoEU", mediaLink : "https://www.politico.eu/newsletter/politico-eu-influence/hi-youre-through-to-the-conflicts-of-interest-hotline/#:~:text=Reinier%20van%20Zutphen.-,TRUSTING%20SOURCES%3A,-Conflicts%20of%20interest", buttonNewTabOpt : true},
+            {mediaPubName : "Frankfurter Allgemeine", mediaLink : "https://www.faz.net/aktuell/wissen/forschung-politik/studie-ueber-interessenkonflikte-in-der-wissenschaft-110075764.html", buttonNewTabOpt : true},
         ]
     },
     {
@@ -34,7 +38,9 @@ const wp_list = [
         downloadTabOpt : false,
         otherButtons : [
             {buttonText : "buttonText1", buttonLink: "/", buttonNewTabOpt : false}
-        ]
+        ],
+        media : [
+            {mediaPubName : "PoliticoEU", mediaLink : "https://www.politico.eu/newsletter/politico-eu-influence/hi-youre-through-to-the-conflicts-of-interest-hotline/#:~:text=Reinier%20van%20Zutphen.-,TRUSTING%20SOURCES%3A,-Conflicts%20of%20interest", buttonNewTabOpt : true}]
     }
 
 ]

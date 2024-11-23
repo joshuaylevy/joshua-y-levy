@@ -8,12 +8,13 @@ import GeneralHoverButton from './generalHoverButton';
 const inter = Inter({ subsets : ["latin"] })
 
 
-export default function PaperDescriptionAccordion({ title, year, authorsList, abstract, paperStatus, journal, downloadPath, downloadTabOpt, otherButtons }){
+export default function PaperDescriptionAccordion({ title, year, authorsList, abstract, paperStatus, journal, downloadPath, downloadTabOpt, otherButtons, mediaLinks}){
     const [isActive, setIsActive] = useState(false);
     return(
         <div className = "flex flex-col justify-between border-gray-300 border-b mb-4 py-4">
             <div className = "grid grid-cols-12 justify-items-stretch items-end pb-3">
-                <div className = "col-span-9 justify-self-start">
+                <div className = "col-span-9 justify-self-start cursor-pointer" 
+                onClick={() => setIsActive(!isActive)}>
                     <h3 className = {`${inter.className} font-semibold text-2xl`}>
                         {title}
                     </h3>
@@ -63,7 +64,7 @@ export default function PaperDescriptionAccordion({ title, year, authorsList, ab
                             {abstract}
                         </p>
                     </div>
-                    <div className = "flex flow-row justify-items-start space-x-4 overflow-hidden py-5">
+                    <div className = "flex flow-row justify-items-start space-x-4 overflow-hidden pt-5">
                         <DownloadButton
                             linkTarget = {downloadPath}
                             newTabOpt = {downloadTabOpt}
@@ -80,9 +81,25 @@ export default function PaperDescriptionAccordion({ title, year, authorsList, ab
                             )
                         })}
                     </div>
+                    <div className="flex flex-row justify-items-start space-x-4 overflow-hidden pt-2 pb-5">
+                        <div className="font-bold py-2 text-sm">
+                            Media:
+                        </div>
+                        {mediaLinks.map((media, index) => {
+                            return(
+                                <div key = {index}>
+                                <GeneralHoverButton
+                                    buttonText = {media.mediaPubName}
+                                    link = {media.mediaLink}
+                                    newTabOpt = {media.buttonNewTabOpt}
+                                />
+                                </div>
+                            )
+                        })}
+                    </div>
 
                 </div>
-
+                
 
             </div>
             

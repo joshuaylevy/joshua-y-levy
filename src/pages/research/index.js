@@ -35,6 +35,7 @@ export default function Research() {
                             downloadPath = {paper.downloadPath}
                             downloadTabOpt = {paper.downloadTabOpt}
                             otherButtons = {paper.otherButtons}
+                            mediaLinks = {paper.media}
                         />
                     )
                 })}

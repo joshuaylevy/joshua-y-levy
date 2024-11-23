@@ -16,7 +16,7 @@ export default function GeneralHoverButton({ buttonText, link, newTabOpt }) {
             href = {link}
             target = {newTabSetting}
         >
-            <div className = {`${inter.className} text-sm text-center p-2 min-w-[8ch] max-w-[14ch] rounded-lg border border-transparent transition-colors hover:border-gray-300 hover:bg-gray-100`}>
+            <div className = {`${inter.className} text-sm text-center p-2 min-w-[8ch] rounded-lg border border-transparent transition-colors hover:border-gray-300 hover:bg-gray-100`}>
                 <div>
                     {buttonText}
                 </div>
