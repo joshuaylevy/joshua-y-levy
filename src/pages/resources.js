@@ -59,10 +59,11 @@ export default function Resources() {
                             </li>
                     </div>
                     {/* Class Notes */}
-                    <div>
+                    {/* <div>
                         <h2 className = {`${inter.className} font-bold text-2xl my-2`}>
                             Class Notes
                         </h2>
+                        <ul className="list-disc list-inside">
                         <li>
                                 <Link
                                     href="https://www.nytimes.com"
@@ -74,64 +75,85 @@ export default function Resources() {
                             <li>Item 2</li>
                             <li>Item 3</li>
                             <li>Item 4</li>
-                    </div>
+                        </ul>
+                    </div> */}
                     {/* For Undergrads */}
                     <div>
                         <h2 className = {`${inter.className} font-bold text-2xl my-2`}>
                             For Undergrads
                         </h2>
-                        <li>
-                            <Link
-                                href="https://sfs.georgetown.edu/carroll-round/"
-                                className = "text-gray-700 underline underline-offset-4 hover:text-blue-500 ease-in duration-100"
-                            > Carroll Round:
-                            </Link>
-                            &nbsp;an in-person conference opportunity for undergrads
-                        </li>
-                        <li>
-                            <Link
-                                    href="https://predoc.org/"
+                        <ul className="list-disc list-inside">
+                            <li>
+                                <Link
+                                    href="https://sfs.georgetown.edu/carroll-round/"
                                     className = "text-gray-700 underline underline-offset-4 hover:text-blue-500 ease-in duration-100"
-                            >
-                                PREDOC:
-                            </Link>
-                                &nbsp;job-opportunities for a future research career
-                        </li>
-                        <li>
-                            <Link
-                                    href="https://predoc.org/"
-                                    className = "text-gray-700 underline underline-offset-4 hover:text-blue-500 ease-in duration-100"
-                            >
-                                EconRA Guide:
-                            </Link>
-                                &nbsp;a guide and notes on applying to a pre-doc
-                        </li>
-                        <li>
-                            Reflections of a Former Pre-Doc
-                        </li>
-                        <li>
-                            Low-Hanging Fruit: Thoughts on Economics PhD Applications
-                        </li>
-                        <li>
-                            On Being a Better Social Scientist
-                        </li>
+                                > Carroll Round:
+                                </Link>
+                                &nbsp;an in-person conference opportunity for undergrads
+                            </li>
+                            <li>
+                                <Link
+                                href="https://gsb-faculty.stanford.edu/susan-athey/professional-advice/"
+                                className="text-gray-700 underline underline-offset-4 hover:text-blue-500 ease-in duration-100">
+                                    Susan Athey
+                                </Link>
+                                &nbsp; on applying to grad school
+                            </li>
+                            <li>
+                                <Link
+                                        href="https://predoc.org/"
+                                        className = "text-gray-700 underline underline-offset-4 hover:text-blue-500 ease-in duration-100"
+                                >
+                                    PREDOC:
+                                </Link>
+                                    &nbsp;job-opportunities for a future research career
+                            </li>
+                            <li>
+                                <Link
+                                        href="https://predoc.org/"
+                                        className = "text-gray-700 underline underline-offset-4 hover:text-blue-500 ease-in duration-100"
+                                >
+                                    EconRA Guide:
+                                </Link>
+                                    &nbsp;a guide and notes on applying to a pre-doc
+                            </li>
+                            <li>
+                                Reflections of a Former Pre-Doc
+                            </li>
+                            <li>
+                                Low-Hanging Fruit: Thoughts on Economics PhD Applications
+                            </li>
+                            <li>
+                                On Being a Better Social Scientist
+                            </li>
+                        </ul>
                     </div>
 
                     <div>
                         <h2 className = {`${inter.className} font-bold text-2xl my-2`}>
                             Coding &amp; Workflow
                         </h2>
-                        <li>
+                        <ul className="list-disc list-inside">
+                            <li>
                                 <Link
                                     href="https://web.stanford.edu/~gentzkow/research/CodeAndData.pdf"
                                     className = "text-gray-700 underline underline-offset-4 hover:text-blue-500 ease-in duration-100"
                                 > Coding and Data for the Social Sciences: A Practitioner&apos;s Guide
                                 </Link>
                                 &nbsp;by Gentzkow and Shaprio, a classic in the genre
-                                </li>
-                            <li>Item 2</li>
+                            </li>
+                            <li>
+                                <Link
+                                    href="https://bashirmohammad.github.io/RAGuide/intro.html"
+                                    className = "text-gray-700 underline underline-offset-4 hover:text-blue-500 ease-in duration-100"
+                                >
+                                        How to Get Stuff Done: A Handbook for Research Assistants and Coauthors 
+                                </Link>
+                                &nbsp; by Bashi, Best, and Caloi, another valuable guide on workflows and tools
+                            </li>
                             <li>Item 3</li>
                             <li>Item 4</li>
+                        </ul>
                     </div>
                 </div>
             </div>
