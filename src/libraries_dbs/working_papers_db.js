@@ -20,6 +20,7 @@ const wp_list = [
             {buttonText : "SSRN", buttonLink: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4979205", buttonNewTabOpt : true}
         ],
         media : [
+            {mediaPubName : "Stigler Center (video)", mediaLink : "https://www.youtube.com/watch?v=EU7EnP9xLrw", buttonNewTabOpt : true},
             {mediaPubName : "PoliticoEU", mediaLink : "https://www.politico.eu/newsletter/politico-eu-influence/hi-youre-through-to-the-conflicts-of-interest-hotline/#:~:text=Reinier%20van%20Zutphen.-,TRUSTING%20SOURCES%3A,-Conflicts%20of%20interest", buttonNewTabOpt : true},
             {mediaPubName : "Frankfurter Allgemeine", mediaLink : "https://www.faz.net/aktuell/wissen/forschung-politik/studie-ueber-interessenkonflikte-in-der-wissenschaft-110075764.html", buttonNewTabOpt : true},
         ]
