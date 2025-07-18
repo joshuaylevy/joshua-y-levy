@@ -8,7 +8,11 @@ import rehypeHighlight from 'rehype-highlight'
 const withMDX = createMDX({
   extension :  /\.mdx?$/,
   options : {
-    remarkPlugins : [remarkFrontmatter, remarkMdxFrontmatter, remarkMath],
+    remarkPlugins: [
+      remarkFrontmatter, 
+      [remarkMdxFrontmatter, { name: 'meta', type: 'export' }], 
+      remarkMath
+    ],
     rehypePlugins: [rehypeKatex, rehypeHighlight]
   }
 })

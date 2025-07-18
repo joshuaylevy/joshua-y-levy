@@ -8,6 +8,11 @@ preview: "This will be some preview text that we want to include"
 
 import Layout from "/src/components/mdxLayout.js";
 
+export default function Page({ children }) {
+  console.log(meta);
+  return <Layout {...meta}>{children}</Layout>;
+}
+
 # Low-Hanging Fruit: Thoughts on Economics PhD Applications
 
 #### By Joshua Levy | May 23rd, 2023
@@ -27,7 +32,7 @@ alternative. I can't really tell what makes this work or not.
 
 Maybe we need some more space. Let's try to insert a [link](https://www.nytimes.com). We are also going to try an internal [link](/public/profile_picture.jpg) to test internal paths. Below that we're going to embed an image:
 
-![Alt text for image](/profile_picture.jpg)
+![Alt text for image](/profile_picture.jpg "Caption text")
 
 > Here's a block quote, in theory. Let's make sure it reflects something profound. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
