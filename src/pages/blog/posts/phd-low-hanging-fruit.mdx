@@ -4,6 +4,9 @@ author: "Joshua Levy"
 published: true
 publishedDate: "May 23rd, 2023"
 preview: "This will be some preview text that we want to include"
+heroImage: "/testhero.jpg"
+heroAlt: "Hero image alt text"
+heroWide: true
 ---
 
 import Layout from "/src/components/mdxLayout.js";
@@ -21,7 +24,21 @@ export default function Page({ children }) {
 
 Do we need to put regular text in-between headings?
 
+Some fascinating insight here.<FootnoteRef id="1" />
+
+<Footnote id="1">
+  {/* prettier-ignore*/}
+  <FootnoteBoxText id="1">This is getting to be a much longer line will prettier still try to format aggressively? How much longer can it get?</FootnoteBoxText>
+</Footnote>
+
 ### Subheading 3
+
+Some fascinating insight here.<FootnoteRef id="2" />
+
+<Footnote id="2">
+  {/* prettier-ignore*/}
+  <FootnoteBoxText id="2">This is getting to be a much longer line will prettier still try to format aggressively? How much longer can it get?</FootnoteBoxText>
+</Footnote>
 
 Lorem ipsum dolor something something something
 
@@ -78,5 +95,3 @@ and a little bit of math: $a^2 + b^2 = c^2$
    c & d
 \end{bmatrix}
 ```
-
-export default ({ children }) => <Layout> {children}</Layout>;

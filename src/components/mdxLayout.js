@@ -2,6 +2,9 @@ import Footer from './footer.js'
 import Navbar from './nav_bar_top.js';
 import { MDXProvider } from '@mdx-js/react';
 import { Heading } from "./mdxComponents/heading.js"
+import { Footnote, FootnoteRef } from './mdxComponents/footnote.js';
+import FootnoteBoxText from './mdxComponents/footNoteBoxText';
+import { FootnoteProvider } from './mdxComponents/footnoteContext.js';
 import { BaseStylings } from './mdxComponents/baseStylings.js';
 import { Image } from './mdxComponents/image.js';
 import NextImage from 'next/image';
@@ -17,6 +20,9 @@ const components = {
     pre: BaseStylings.Pre,
     blockquote: BaseStylings.BlockQuote,
     img: Image,
+    Footnote,
+    FootnoteRef,
+    FootnoteBoxText
   };
   
 export default function Layout ({children, heroImage, heroAlt = "a", heroWide = false, title, ...metaRemains}) {
@@ -40,10 +46,13 @@ export default function Layout ({children, heroImage, heroAlt = "a", heroWide = 
                             />
                     </div>
                 )}
+                {/* <h1 className="mt-4 mb-2 text-4xl font-bold">{title}</h1> */}
                 <div className="flex flex-col place-items-start justify-between mx-auto  my-10 max-w-3xl">
-                <MDXProvider components={components}>
-                    {children}
-                </MDXProvider>
+                    <FootnoteProvider>
+                        <MDXProvider components={components}>
+                            {children}
+                        </MDXProvider>
+                    </FootnoteProvider>
                 </div>
             </main>
             <Footer />
