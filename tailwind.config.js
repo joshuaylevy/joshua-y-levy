@@ -8,6 +8,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      maskImage: {
+        'fade-out-b': 'linear-gradient(to bottom, green 50%, black 100%)',
+        // You can add more fade directions if needed
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -15,5 +19,6 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  // plugins: []
+  plugins: [require('@tailwindcss/typography')]
 }

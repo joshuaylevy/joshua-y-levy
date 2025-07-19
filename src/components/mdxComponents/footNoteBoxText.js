@@ -6,10 +6,10 @@ export default function FootnoteBoxText({ children, id }) {
     
   return (
     <span 
-        className={`inline text-gray-600 leading-tight
+        className={`inline leading-tight
             ${activeId === id
-                ? 'text-sm'
-                : 'text-xs'}`
+                ? 'text-xs text-gray-800'
+                : 'text-xs text-gray-600'}`
             }
     >
       {children}

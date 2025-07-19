@@ -27,18 +27,20 @@ export function Footnote({ children, id }) {
             ref={ref}
             onClick={toggleActive}
             style={{ top: `${top}px` }}
-            className={`hidden lg:block absolute right-10 w-64 p-3 text-xs cursor-pointer transition-all duration-100 ease-in
+            className={`hidden lg:block absolute right-10 w-64 p-3 cursor-pointer transition-all duration-100 ease-in overflow-hidden pb-5"
                 ${activeId === id
-                    // ? 'text-gray-800 bg-white border-blue-400'
-                    ? 'bg-white text-sm text-gray-800 border-gray-400 rounded shadow-md'
-                    // : 'text-gray-400 bg-gray-100'}
-                    : 'text-xs text-gray-500 border-transparent'}`
+                    ? 'bg-white text-xs border-gray-400 rounded shadow-md z-10'
+                    : 'border-transparent text-xs max-h-24 mask-fade-bottom'}`
+                    // : 'bg-white border-transparent text-xs max-h-24 mask-[linear-gradient(to_bottom,_black_40%,_transparent_100%)] mask-size-full mask-repeat-no'}`
                 }
         >
-            {/* <div className="text-sm leading-tight [&>p]:inline [&>p]:m-0 [&>a]?:underline [&>ul]:list-disc"> */}
-            <div>
-                <span className="font-bold text-xs text-gray-400 mr-1 align-top">{id}.</span>
+            <div className="flex flex-row">
+                <div>
+                    <span className="font-bold text-xs text-gray-400 mr-3 align-top">{id}.</span>
+                </div>
+                <div>
                     {children}
+                </div>
             </div>
         </div>
     );

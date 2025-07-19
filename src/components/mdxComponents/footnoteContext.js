@@ -8,10 +8,10 @@ export function FootnoteProvider({ children }) {
 
   console.log(positionsRef);
   const registerTop = (desiredTop) => {
-    let newTop = desiredTop;
+    let newTop = desiredTop; // desiredTop is the default
     positionsRef.current.forEach((pos) => {
-      if (Math.abs(pos - newTop) < 150) {
-        newTop = pos + 180; // push downward; adjust as needed
+      if (Math.abs(pos - newTop) < 100) {
+        newTop = pos + 96 + 8; // push downward; adjust as needed
       }
     });
 
