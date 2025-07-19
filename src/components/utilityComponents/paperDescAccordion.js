@@ -15,7 +15,7 @@ export default function PaperDescriptionAccordion({ title, year, authorsList, ab
             <div className = "grid grid-cols-12 justify-items-stretch items-end pb-3">
                 <div className = "col-span-9 justify-self-start cursor-pointer" 
                 onClick={() => setIsActive(!isActive)}>
-                    <h3 className = {`${inter.className} font-semibold text-2xl`}>
+                    <h3 className = {`${inter.className} font-semibold text-2xl hover:text-blue-500`}>
                         {title}
                     </h3>
                 </div>
