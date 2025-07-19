@@ -13,7 +13,8 @@ const withMDX = createMDX({
       [remarkMdxFrontmatter, { name: 'meta', type: 'export' }], 
       remarkMath
     ],
-    rehypePlugins: [rehypeKatex, rehypeHighlight]
+    rehypePlugins: [rehypeKatex, rehypeHighlight],
+    providerImportSource: "@mdx-js/react"
   }
 })
 
