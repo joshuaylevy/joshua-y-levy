@@ -18,7 +18,7 @@ export default function Resources() {
                     {/* Teaching Materials */}
                     <div>
                         <h2 className = {`${inter.className} font-bold text-2xl my-2`}>
-                            Teaching Materials
+                            General
                         </h2>
                         {/* Removed list-disc and list-inside. Using custom bullet with flexbox for hanging indent. */}
                         <ul className="list-none">
@@ -28,11 +28,11 @@ export default function Resources() {
                                 {/* Content wrapped in a div to allow it to wrap under itself */}
                                 <div>
                                     <Link
-                                        href="https://www.nytimes.com"
+                                        href="https://econ.now/"
                                         className = "text-gray-700 underline underline-offset-4 hover:text-blue-500 ease-in duration-100"
-                                    > Link:
+                                    > EconNow:
                                     </Link>
-                                    &nbsp;to the New York Times
+                                    &nbsp; Maybe the most interesting new aggregator for professional/academic economist, by <Link href="https://x.com/aniketapanjwani" className = "text-gray-700 underline underline-offset-4 hover:text-blue-500 ease-in duration-100">Aniket Panjwani</Link>
                                 </div>
                             </li>
                             <li className="flex items-start mb-2">
@@ -60,11 +60,11 @@ export default function Resources() {
                                 <span className="mr-2 text-gray-700">•</span>
                                 <div>
                                     <Link
-                                        href="https://www.nytimes.com"
+                                        href="https://www.datawrapper.de/blog/colors-for-data-vis-style-guides"
                                         className = "text-gray-700 underline underline-offset-4 hover:text-blue-500 ease-in duration-100"
-                                    > Link:
+                                    > A long commentary and examples of color use in data viz
                                     </Link>
-                                    &nbsp;to the New York Times
+                                    &nbsp; by Lisa Charlotte Muth
                                 </div>
                             </li>
                             <li className="flex items-start mb-2">
@@ -83,7 +83,7 @@ export default function Resources() {
                                         className = "text-gray-700 underline underline-offset-4 hover:text-blue-500 ease-in duration-100">
                                             theme_personal:
                                     </Link>
-                                    &nbsp; how I think data viz
+                                    &nbsp; how I think about data viz
                                 </div>
                             </li>
                         </ul>

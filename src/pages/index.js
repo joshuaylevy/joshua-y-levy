@@ -52,7 +52,7 @@ export default function Home() {
             </div>
             <div className = "self-auto">
               <p className = "text-justify">
-                I am currently an Economics PhD student at the University of Southern California. Formerly, I&apos;ve held research positions at the University of Chicago&apos;s Booth School of Business and at the Carnegie Endowment for International Peace. My research interests lie at the intersection of spatial economics and political economy but I&apos;m always excited to learn about other stuff too 😀
+                I am currently an Economics PhD student at the University of Southern California. Formerly, I&apos;ve held research positions at the University of Chicago&apos;s Booth School of Business and at the Carnegie Endowment for International Peace. In 2020, I graduated from Georgetown University&apos;s Edmund A. Walsh School of Foreign Service (BSFS International Political Economy). My research interests lie at the intersection of political economy and spatial economics but I&apos;m always excited to learn about other stuff too 😀
               </p>
             </div>
           </div>
