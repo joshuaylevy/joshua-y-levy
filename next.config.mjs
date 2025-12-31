@@ -2,6 +2,7 @@ import remarkFrontmatter from "remark-frontmatter";
 import createMDX from "@next/mdx";
 import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 import remarkMath from 'remark-math'
+import remarkUnwrapImages from 'remark-unwrap-images'
 import rehypeKatex from 'rehype-katex'
 import rehypeHighlight from 'rehype-highlight'
 
@@ -11,7 +12,8 @@ const withMDX = createMDX({
     remarkPlugins: [
       remarkFrontmatter, 
       [remarkMdxFrontmatter, { name: 'meta', type: 'export' }], 
-      remarkMath
+      remarkMath,
+      remarkUnwrapImages
     ],
     rehypePlugins: [rehypeKatex, rehypeHighlight],
     providerImportSource: "@mdx-js/react"

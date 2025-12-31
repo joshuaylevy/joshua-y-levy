@@ -7,6 +7,7 @@ import FootnoteBoxText from './mdxComponents/footNoteBoxText';
 import { FootnoteProvider } from './mdxComponents/footnoteContext.js';
 import { BaseStylings } from './mdxComponents/baseStylings.js';
 import { Image } from './mdxComponents/image.js';
+import { List } from './mdxComponents/list.js';
 import NextImage from 'next/image';
 
 
@@ -19,6 +20,9 @@ const components = {
     a: BaseStylings.LinkInLine,
     pre: BaseStylings.Pre,
     blockquote: BaseStylings.BlockQuote,
+    ul: List.Unordered,
+    ol: List.Ordered,
+    li: List.Item,
     img: Image,
     Footnote,
     FootnoteRef,
