@@ -12,7 +12,7 @@ export default function Footer(){
         { label : 'CV',  description : 'For a little bit of background', href : '/cv'},
         { label : 'Research',  description : 'For more details on my work', href : '/research'},
         { label : 'Thoughts',  description : 'For some idle musings', href : '/blog'},
-        { label : 'Resources',  description : 'For some potentially useful things', href : '/resources'}
+        { label : 'Resources',  description : 'For maybe useful things', href : '/resources'}
     ];
 
     return(

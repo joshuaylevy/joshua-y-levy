@@ -8,7 +8,7 @@ export function Image({ src, alt = "" }) {
   }
 
   return (
-    <figure className="my-6 flex flex-col items-start">
+    <figure className="my-6 w-full flex flex-col items-start">
       <div className="w-full">
         <NextImage
           src={src}
