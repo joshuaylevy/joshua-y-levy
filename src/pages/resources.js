@@ -132,7 +132,7 @@ export default function Resources() {
                                     className="text-gray-700 underline underline-offset-4 hover:text-blue-500 ease-in duration-100">
                                         Susan Athey
                                     </Link>
-                                    &nbsp; on applying to grad school
+                                    &nbsp;on applying to grad school
                                 </div>
                             </li>
                             <li className="flex items-start mb-2">
@@ -204,7 +204,23 @@ export default function Resources() {
                             </li>
                             <li className="flex items-start mb-2">
                                 <span className="mr-2 text-gray-700">•</span>
-                                <div>Item 3</div>
+                                <div><Link
+                                        href="blog/posts/r-in-cursor"
+                                        className = "text-gray-700 underline underline-offset-4 hover:text-blue-500 ease-in duration-100"
+                                    >
+                                            Setting up R in Cursor/ VS Code 
+                                    </Link>
+                                    &nbsp; how to set up an R environment in Cursor/VS Code (for economists), by me</div>
+                            </li>
+                            <li className="flex items-start mb-2">
+                                <span className="mr-2 text-gray-700">•</span>
+                                <div><Link
+                                        href="blog/posts/python-in-cursor"
+                                        className = "text-gray-700 underline underline-offset-4 hover:text-blue-500 ease-in duration-100"
+                                    >
+                                            Setting up Python in Cursor/ VS Code 
+                                    </Link>
+                                    &nbsp; how to set up a Python environment in Cursor/VS Code with conda and replicability (for economists), by me</div>
                             </li>
                             <li className="flex items-start mb-2">
                                 <span className="mr-2 text-gray-700">•</span>

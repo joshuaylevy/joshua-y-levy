@@ -1,0 +1,194 @@
+---
+title: "Setting up Python in Cursor/VS Code"
+author: "Joshua Levy"
+published: true
+publishedDate: "March 21st, 2025"
+preview: "How to set up a Python environment in Cursor/VS Code with conda, emphasizing replicability (for economists)"
+heroImage: "/testhero.jpg"
+heroAlt: "Hero image alt text"
+heroWide: true
+---
+
+import Layout from "/src/components/mdxLayout.js";
+
+export default function Page({ children }) {
+  console.log(meta);
+  return <Layout {...meta}>{children}</Layout>;
+}
+
+# Setting up Python in Cursor/VS Code
+
+#### By Joshua Levy | March 21st, 2025
+
+Some years ago, I made an attempt to move all of my work to VS Code. Though I've since moved over to [Cursor](https://cursor.com/) (an _incredible_ AI-first IDE), because this is built on a fork of VS Code, a lot of the rich extensions and tools that made writing Python code in VS Code are still available. Below is a quick guide to getting to `hello world` in an AI-first Python environment—with a strong emphasis on environment management via conda and on replicability of your package/version setup.
+
+## Why conda (and not multiple Python installs)
+
+Before we get into the weeds: I strongly recommend managing Python through [conda](https://docs.conda.io/projects/conda/en/stable/user-guide/install/index.html) rather than installing multiple system- or user-level Python versions. Conda lets you create isolated environments with specific Python versions and package sets, switch between them easily, and—critically—export and share environment specs so collaborators (or future-you) can reproduce your setup exactly.<FootnoteRef id="1"/> You don't need to juggle `pyenv`, homebrew Pythons, or `/usr/bin/python3`; one conda installation and you're set.<FootnoteRef id="2"/>
+
+<Footnote id="1">
+  {/* prettier-ignore*/}
+  <FootnoteBoxText id="1">From personal experience, I know that "it works on my machine" is the enemy of replicability. If demand suffices, I would be happy to write a "Getting Started as a Computational Researcher Guide." If you think there's demand for this, let me know!</FootnoteBoxText>
+</Footnote>
+
+<Footnote id="2">
+  {/* prettier-ignore*/}
+  <FootnoteBoxText id="2">Another option is [uv](https://docs.astral.sh/uv/), which offers remarkable speed for dependency resolution and environment creation. I personally prefer uv for its responsiveness, but this guide focuses on conda given its maturity, broad adoption in scientific computing, and the conda-forge ecosystem—all of which support replicability in collaborative and cross-platform settings.</FootnoteBoxText>
+</Footnote>
+
+The lightest way to get conda is [Miniconda](https://docs.anaconda.com/getting-started/miniconda/install/), which installs only conda, Python, and a few essentials. If you prefer a heavier, pre-loaded data-science stack, [Anaconda Distribution](https://docs.anaconda.com/free/anaconda/install/) is an option—but for most users, Miniconda plus project-specific environments is the better fit. Full install instructions and platform-specific guidance are in the [conda installation docs](https://docs.conda.io/projects/conda/en/stable/user-guide/install/index.html).
+
+## Prerequisites, Cursor, and its extensions
+
+If you're reading this, I trust that you have some familiarity with dealing with a command line/terminal environment.<FootnoteRef id="3"/> I am writing from a macOS machine and my shell of choice is `zsh`, so note that some things like file path specifications/terminal commands may not work for your machine. I expect that you have installed Cursor and have conda installed (Miniconda or Anaconda).
+
+<Footnote id="3">
+  {/* prettier-ignore*/}
+  <FootnoteBoxText id="3">If you are transferring from VS Code, when you install Cursor you should be presented with an option to "Import user settings from VS Code." This worked a trick for me and will obviate much/some of the below.</FootnoteBoxText>
+</Footnote>
+
+If you have used VS Code in the past, the UI should be quite familiar. In Cursor, you should install the following extensions:
+
+- Python [Anysphere] ([https://marketplace.cursorapi.com/items/?itemName=anysphere.cursorpyright](https://marketplace.cursorapi.com/items/?itemName=anysphere.cursorpyright))
+- Python [ms-python] ([https://marketplace.cursorapi.com/items/?itemName=ms-python.python](https://marketplace.cursorapi.com/items/?itemName=ms-python.python))
+- Python Debugger ([https://marketplace.cursorapi.com/items/?itemName=ms-python.debugpy](https://marketplace.cursorapi.com/items/?itemName=ms-python.debugpy))
+- Jupyter ([https://marketplace.cursorapi.com/items/?itemName=ms-toolsai.jupyter](https://marketplace.cursorapi.com/items/?itemName=ms-toolsai.jupyter))
+
+## Creating and managing conda environments for replicability
+
+The whole point of conda is to keep projects isolated and reproducible. Create a new environment for each project (or class of projects), pin your Python version, and install only what you need. When you're done, export the environment so others can recreate it.
+
+### Create a project environment
+
+```zsh title="Creating a conda environment"
+# Create an environment named after your project, with a specific Python version
+(base) % conda create -n myproject python=3.11
+
+# Activate it
+(base) % conda activate myproject
+```
+
+Install packages as you go. Prefer `conda install` when the package is available on conda-forge or defaults; use `pip install` inside the environment only when necessary, and document both in your `environment.yml` (see below).
+
+### Export for replicability
+
+To share your environment with collaborators or to recreate it on another machine, export it. For **cross-platform sharing** (e.g., Mac ↔ Linux), use `--from-history` so conda records only the packages you explicitly installed; conda will resolve OS-appropriate dependencies when the environment is recreated.<FootnoteRef id="4"/>
+
+<Footnote id="4">
+  {/* prettier-ignore*/}
+  <FootnoteBoxText id="4">A full export without `--from-history` pins every dependency including build hashes, which is great for exact reproduction on the same OS but often fails when moving between platforms. See the [conda export documentation](https://docs.conda.io/projects/conda/en/stable/commands/export.html) for details.</FootnoteBoxText>
+</Footnote>
+
+```zsh title="Exporting environment (cross-platform)"
+# From within your activated environment
+(myproject) % conda export --from-history -f environment.yml
+```
+
+For **exact reproducibility** on the same platform (e.g., a production server that matches your Mac), you can do a full export:
+
+```zsh title="Exporting environment (exact, same platform)"
+(myproject) % conda export -f environment.yml
+```
+
+Commit `environment.yml` to your repo.<FootnoteRef id="5"/> Anyone (including you, later) can recreate the environment with:
+
+<Footnote id="5">
+  {/* prettier-ignore*/}
+  <FootnoteBoxText id="5">Every time you install a package with <code>conda install</code>, re-run <code>conda export -f environment.yml</code> so that the file stays up to date.</FootnoteBoxText>
+</Footnote>
+
+```zsh title="Recreating environment from file"
+% conda env create -f environment.yml
+% conda activate myproject
+```
+
+More on managing and sharing environments: [Managing environments](https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html), [conda export](https://docs.conda.io/projects/conda/en/stable/commands/export.html).
+
+## Python for Cursor/VS Code: interpreters and kernels
+
+Cursor needs to know which Python interpreter (and thus which conda environment) to use. Use the **Python: Select Interpreter** command from the Command Palette (`Ctrl/Cmd+Shift+P`). You should see your conda environments listed (e.g., `Python 3.11.x ('myproject')`). Pick the one for your current project.
+
+For Jupyter notebooks (`.ipynb`), you also need to select a **kernel**. The kernel picker appears in the top-right of the notebook; choose the same conda environment you use for your `.py` scripts so that package versions stay consistent.
+
+## .py scripts and the Python Interactive window
+
+For regular Python scripts (`.py`), Cursor behaves like VS Code: you can run the whole file, run a selection, or run code in an interactive REPL. A few useful workflows:
+
+- **Run entire file**: Click the Run button in the top-right, or use the Command Palette: **Python: Run Python File in Terminal**.
+- **Run selection / current line**: Select code and press `Shift+Enter` to send it to the Python Interactive window (or `Ctrl/Cmd+Shift+P` → **Python: Run Selection/Line in Python Terminal**). The first run spawns an interactive session.
+- **Cell-style execution in `.py` files**: You can define "cells" in a `.py` file using `# %%` (and optionally `# %% [markdown]` for markdown). Each cell can be run individually with the play button or `Shift+Enter`. This gives you a notebook-like workflow inside a plain Python file, which works well with version control because `.py` diffs cleanly. See [Jupyter support in Python files](https://code.visualstudio.com/docs/python/jupyter-support-py) for details.
+
+Example:
+
+```python title="hello_world.py"
+# %%
+import pandas as pd
+
+# %%
+print("Hello world!")
+df = pd.DataFrame({"x": [1, 2, 3], "y": [4, 5, 6]})
+print(df)
+```
+
+## .ipynb notebooks and Cursor
+
+Jupyter notebooks (`.ipynb`) are fully supported in Cursor.<FootnoteRef id="6"/> You can create, open, edit, and run notebooks just as in VS Code. The [Jupyter extension](https://marketplace.cursorapi.com/items/?itemName=ms-toolsai.jupyter) provides:
+
+<Footnote id="6">
+  {/* prettier-ignore*/}
+  <FootnoteBoxText id="6">Cursor inherits VS Code's native Jupyter support. For a fuller overview, see [Jupyter Notebooks in VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks).</FootnoteBoxText>
+</Footnote>
+
+- **Cell execution**: Run a cell with `Ctrl/Cmd+Enter` (run and stay), `Shift+Enter` (run and move to next), or `Alt+Enter` (run and insert new below).
+- **Variable Explorer & Data Viewer**: Inspect variables and dataframes in the current kernel session.
+- **Kernel selection**: Use the kernel picker to ensure you're running against the correct conda environment.
+- **Export**: Export the notebook to `.py`, HTML, or PDF from the notebook toolbar.
+
+**Notebooks vs. `.py` scripts in Cursor**:
+
+| Aspect | `.ipynb` notebooks | `.py` scripts |
+|--------|--------------------|---------------|
+| Exploratory / iterative work | Ideal for stepwise analysis, inline plots, mixed markdown | Use `# %%` cells for a similar feel |
+| Version control | JSON diffs are noisy; consider [Jupytext](https://jupytext.readthedocs.io/) for paired `.py` | Clean, line-based diffs |
+| Debugging | Supported (Run by Line, Debug Cell) | Full debugger support |
+| AI assistance | Cursor can edit cells and suggest code | Same, plus cleaner context for large files |
+
+Both formats work well with Cursor; choose based on whether you need the classic notebook UX or prefer script-based workflows with cell boundaries.
+
+## Cursor workspace/user settings (JSON)
+
+You can steer Cursor toward your preferred Python interpreter at the user or workspace level. Open the Command Palette and run **Preferences: Open [User]/[Workspace] Settings (JSON)**. Example:
+
+```json title="Cursor settings JSON"
+{
+  "python.defaultInterpreterPath": "${env:HOME}/miniconda3/envs/myproject/bin/python",
+  "python.terminal.activateEnvironment": true
+}
+```
+
+Adjust the path to match your conda install and environment. `python.terminal.activateEnvironment` will activate the selected environment when you open a new terminal, so `python` and `pip` point to the right place.
+
+## Trying it all out!
+
+Give everything a restart (close and reopen Cursor, terminals, etc.) and verify:
+
+- **`.py` scripts**: Run a file or selection; code executes in the correct conda environment.
+- **`.ipynb` notebooks**: Select your project's kernel, run a few cells, and confirm packages (e.g., `pandas`) resolve correctly.
+- **Replicability**: From a clean clone, run `conda env create -f environment.yml` and `conda activate myproject`; your code should run without surprises.
+
+```python title="hello world"
+# hello_world.py or a notebook cell
+import pandas as pd
+print("Hello world!")
+df = pd.DataFrame({"x": [1, 2, 3], "y": [4, 5, 6]})
+print(df)
+```
+
+## Cheatsheet/checklist
+
+- Use **conda** (Miniconda or Anaconda) instead of multiple system Python installs.
+- Create a **project-specific conda environment** and activate it before working.
+- Export with `conda export --from-history -f environment.yml` for cross-platform replicability; commit `environment.yml` to the repo.
+- **Select the correct Python interpreter** in Cursor (Command Palette → Python: Select Interpreter) and the correct **kernel** for notebooks.
+- For `.py` files, use `# %%` cells if you want a notebook-like workflow with cleaner diffs.
+- Ensure `python.terminal.activateEnvironment` is enabled so new terminals use your project environment.

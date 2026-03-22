@@ -1,0 +1,161 @@
+---
+title: "Setting up R in Cursor/VS Code"
+author: "Joshua Levy"
+published: true
+publishedDate: "January 3rd, 2025"
+preview: "How to set up an R environment in Cursor/VS Code (for economists)"
+heroImage: "/testhero.jpg"
+heroAlt: "Hero image alt text"
+heroWide: true
+---
+
+import Layout from "/src/components/mdxLayout.js";
+
+export default function Page({ children }) {
+  console.log(meta);
+  return <Layout {...meta}>{children}</Layout>;
+}
+
+# Setting up R in Cursor/VS Code
+
+#### By Joshua Levy | January 3rd, 2025
+
+Some years ago, I made an attempt to move all of my work to VS Code. Though I've since moved over to [Cursor](https://cursor.com/) (an _incredible_ AI-first IDE), because this is built on a fork of VS Code, a lot of the rich extensions and tools that made writing R code in VS Code are still available. Below is a quick guide to getting to `hello world` in an AI-first R environment.
+
+## Prerequisites, Cursor, and its extensions
+
+If you're reading this, I trust that you have some familiarity with dealing with a command line/terminal environment.<FootnoteRef id="1"/> I am writing from a macOS machine and my shell of choice is `zsh` so note that some things like file path specifications/terminal commands may not work for your machine. I expect that you have installed Cursor and have some way of managing Python (versions 3.11.X or later are working for me) environments (at time of writing, I am using `conda`), and some local install of R (version 3.4.0 or later; to make life easier).
+
+<Footnote id="1">
+  {/* prettier-ignore*/}
+  <FootnoteBoxText id="1">From personal experience, I know that I shouldn't take this as a given and far too much jargon is thrown around (the curse of knowledge plagues us all). If demand suffices, I would be happy to write a "Getting Started as a Computational Researcher Guide." If you think there's demand for this, let me know! </FootnoteBoxText>
+</Footnote>
+
+If you have used VS Code in the past, the UI should be quite familiar.<FootnoteRef id="2"/> In Cursor, you should install the following extensions:
+
+<Footnote id="2">
+  {/* prettier-ignore*/}
+  <FootnoteBoxText id="2">If you are transferring from VS Code, when you install Cursor you should be presented with an option to "Import user settings from VS Code." This worked a trick for me and will obviate much/some of the below.</FootnoteBoxText>
+</Footnote>
+
+- R ([https://marketplace.cursorapi.com/items/?itemName=REditorSupport.r](https://marketplace.cursorapi.com/items/?itemName=REditorSupport.r))
+- R Syntax ([https://marketplace.cursorapi.com/items/?itemName=REditorSupport.r-syntax](https://marketplace.cursorapi.com/items/?itemName=REditorSupport.r-syntax))
+- Python [Anysphere] ([https://marketplace.cursorapi.com/items/?itemName=anysphere.cursorpyright](https://marketplace.cursorapi.com/items/?itemName=anysphere.cursorpyright))
+- Python [ms-python] ([https://marketplace.cursorapi.com/items/?itemName=ms-python.python](https://marketplace.cursorapi.com/items/?itemName=ms-python.python))
+- Python Debugger ([https://marketplace.cursorapi.com/items/?itemName=ms-python.debugpy](https://marketplace.cursorapi.com/items/?itemName=ms-python.debugpy))
+
+## R for Cursor/VS Code
+
+To haven an IDE-like experience with R in Cursor, you will also require some Python and R utility packages. I'm going to break these up these requirements by language but you need most all of them to get the full experience.
+
+### Python requirements
+
+The most important Python package you will need is `radian`. This gives you an interactive R environment in the terminal that has features like auto-complete, syntax highlighting, etc. Note, however, that if you have a Python environment/package manager. You may need to install this package repeatedly/per environment. Below is a command that will install it to the `base` conda environment, but you can/should create/navigate to your environment of choice. Follow the prompts that you are offered (you may need to install a bunch of other dependencies).
+
+```zsh title="Installing radian"
+(base) joshua-y-levy % conda install -c conda-forge radian
+```
+
+### R requirements
+
+R is also going to require the `languageserver` and `httpgd` packages. Note that if you are using an R package manager like renv, you are going to have to install these packages per project/environment as well. At this point, see if you can start interacting with R through the radian terminal:
+
+```R title="Installing languageserver"
+# A shell command
+(base) joshua-y-levy % radian
+
+# An R repl should open here
+## At this point, if you are using something like renv,
+## initialize/activate your project etc.
+
+# Install `languageserver`
+r$> install.packages("languageserver")
+```
+
+Follow any CRAN prompts to install packages etc. At time of writing, the `httpgd` package (which helps view figures/browser objects in the IDE) is not available on CRAN (it comes and it goes) and so has to be installed from community sources.<FootnoteRef id="3"/> (More details can be found [here](https://community.r-multiverse.org/httpgd)). Run the following R command Use the following commands:
+
+<Footnote id="3">
+  {/* prettier-ignore*/}
+  <FootnoteBoxText id="3">I have had persistent troubles with `httpgd` in a "global" environment. In particular, I get an `Error in dyn.load(file, ...)` error when trying to generate/render plots. I can consistently replicate this problem but it seems to have gone unaddressed by the community. I think that it has to do with various rendering packages that are/aren't compatible with the M-Series of ARM-based processors made by Apple. I have found that having project-specific renv environments and up-to-date installs of R available tends to resolve this problem and would recommend this course of action (besides it being a general best practice).</FootnoteBoxText>
+</Footnote>
+
+```R title="Installing httpgd"
+# Install `httpgd`
+install.packages('httpgd', repos = c('https://community.r-multiverse.org', 'https://cloud.r-project.org'))
+```
+
+## Cursor workspace/user settings (JSON)
+
+At this point you should have everything you need installed, but some settings should still be changed to make sure everything runs smoothly. As does VS Code, Cursor permits user-level (global settings) and workspace (directory-specific) settings. Where you choose to enable the following settings is up to you but because I have these in my global settings (and then make modifications project by project). You can access your user/workspace settings JSON by opening the Command Palette (`Ctrl/Cmd+Shift+P`) and searching for "Preferences: Open [User]/[Workspace] Settings (JSON). Paste the following options into that `.json` file and save it. More details for what each of these settings do is available in the Cursor settings pane (`Ctrl/Cmd+,`). (Note that some of the settings are macOS specific but the analogs to your OS of choice should be easy to find.)
+
+```json title="Cursor settings JSON)
+# settings.json
+{
+  "r.rterm.mac": "<PATH TO WHEREVER YOUR SPECIFIC INSTALL OF RADIAN IS>/radian",
+  // "r.rterm.mac": "/Users/joshuaylevy/anaconda3/bin/radian"
+  // Example globa radian path for me
+  "r.rterm.option": ["--no-save", "--no-restore"],
+  "r.bracketedPaste": true,
+  "r.plot.useHttpgd": true,
+  "terminal.integrated.env.osx": {
+    "R_HOME": "/Library/Frameworks/R.framework/Resources",
+    "R_BIN": "/usr/local/bin/R"
+  }
+}
+```
+
+## .Rprofile and httpgd settings
+
+By default, R and radian will try to open plots/interactive in a separate "python" window. In order to get them to open in Cursor, `httpgd` options need to be specified. I recommend doing this by including the following code in either a global or project-specific `.Rprofile` file.
+
+```R title="httpgd options"
+# /.Rprofile
+
+# Activating the project specific renv package environment
+# source("renv/activate.R")
+
+# Setting CRAN mirror default
+local({
+    r <- getOption("repos")
+    r["CRAN"] <- "https://cran.rstudio.com/"
+    options(repos = r)
+})
+
+# httpgd plot viewer setup
+if (interactive() && Sys.getenv("TERM_PROGRAM") == "vscode") {
+    if ("httpgd" %in% .packages(all.available = TRUE)) {
+        options(vsc.plot = FALSE)
+        options(device = function(...) {
+            httpgd::hgd(silent = TRUE)
+            .vsc.browser(httpgd::hgd_url(history = FALSE), viewer = "Beside")
+        })
+    }
+}
+```
+
+## Trying it all out!
+
+You should now be set up to write R code in your Cursor environment! Give everything a restart (close and reopen Cursor, terminals, R sessions, etc.) and to make sure that everything is working as expected, try setting up a `.R` script and see if all the following works:
+
+- You can send individual lines/selections of R code (from a `.R` script, for example) to the terminal using `Ctrl/Cmd+Enter` (Sending the first such command this way spawns a new radian R session/terminal)
+- Your R terminal has R-specific IntelliSense, autocomplete, access to environment variables etc.
+- Plots open in Cursor, and can be resized, navigated with arrow-keys etc.
+
+```R title="hello world"
+# helloworld.R
+
+library(tidyverse)
+print("Hello world!")
+
+ggplot(data=mtcars) +
+    geom_point(aes(x=cyl, y=mpg, color=cyl)) +
+    theme_minimal()
+```
+
+## Cheatsheet/checklist
+
+It seems like every time I start a new R project something going just oh-so-slightly wrong. Here is a checklist of things that I have made to consult to make sure that my environment is set up correctly before I get to work!
+
+- Make sure that the Python environment that Cursor prefers to send code to (e.g., a `conda` environment) has radian available
+- Make sure that `httpgd` is installed and you have all the relevant settings turned on/off in your `.Rprofile` files.
+- Make sure that `languageserver` is installed in your R environment
