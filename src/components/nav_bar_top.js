@@ -12,9 +12,7 @@ export default function Navbar() {
     const [isActive, setIsActive] = useState(false);
     const links = [ 
         { label : 'CV', href : '/cv' },
-        { label : 'Research', href : '/research' },
-        { label : 'Thoughts', href : '/blog' },
-        { label : 'Resources', href : '/resources' }
+        { label : 'Research', href : '/research' }
     ];
 
     return(

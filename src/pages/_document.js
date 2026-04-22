@@ -1,5 +1,4 @@
 import { Html, Head, Main, NextScript} from 'next/document'
-import Link from 'next/link'
 
 
 
@@ -9,6 +8,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
       {/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css"/>
        */}
         {/* <link rel="stylesheet" src="styles."/> */}
