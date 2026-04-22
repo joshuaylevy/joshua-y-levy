@@ -12,7 +12,6 @@ import {
   SiC,
   SiRuby,
   SiPhp,
-  SiJava,
   SiCsharp,
   SiHtml5,
   SiCss3,
@@ -24,6 +23,7 @@ import {
   SiSqlite,
   SiMysql,
 } from "react-icons/si";
+import { FaJava } from "react-icons/fa";
 import { HiOutlineCode } from "react-icons/hi";
 
 /** Maps language identifier (from className) to display label and icon */
@@ -46,7 +46,7 @@ const LANGUAGE_CONFIG = {
   ruby: { label: "Ruby", Icon: SiRuby },
   rb: { label: "Ruby", Icon: SiRuby },
   php: { label: "PHP", Icon: SiPhp },
-  java: { label: "Java", Icon: SiJava },
+  java: { label: "Java", Icon: FaJava },
   csharp: { label: "C#", Icon: SiCsharp },
   "c#": { label: "C#", Icon: SiCsharp },
   html: { label: "HTML", Icon: SiHtml5 },
