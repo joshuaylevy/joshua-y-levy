@@ -51,10 +51,12 @@ export default function Layout ({children, heroImage, heroAlt = "a", heroWide = 
                     </div>
                 )}
                 {/* <h1 className="mt-4 mb-2 text-4xl font-bold">{title}</h1> */}
-                <div className="flex flex-col place-items-start justify-between mx-auto  my-10 max-w-3xl">
+                <div className="flex flex-col place-items-start justify-between mx-auto my-10 max-w-3xl">
                     <FootnoteProvider>
                         <MDXProvider components={components}>
-                            {children}
+                            <div className="flex flex-col w-full">
+                                {children}
+                            </div>
                         </MDXProvider>
                     </FootnoteProvider>
                 </div>

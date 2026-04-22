@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -8,6 +10,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        ...defaultTheme.screens,
+        footnoteGutter: '1320px',
+      },
       maskImage: {
         'fade-out-b': 'linear-gradient(to bottom, green 50%, black 100%)',
         // You can add more fade directions if needed
