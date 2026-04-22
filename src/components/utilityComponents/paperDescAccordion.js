@@ -10,6 +10,8 @@ const inter = Inter({ subsets : ["latin"] })
 
 export default function PaperDescriptionAccordion({ title, year, authorsList, abstract, paperStatus, journal, downloadPath, downloadTabOpt, otherButtons, mediaLinks}){
     const [isActive, setIsActive] = useState(false);
+    const hasMediaLinks = Array.isArray(mediaLinks) && mediaLinks.length > 0;
+
     return(
         <div className = "flex flex-col justify-between border-gray-300 border-b mb-4 py-4">
             <div className = "grid grid-cols-12 justify-items-stretch items-end pb-3">
@@ -60,9 +62,10 @@ export default function PaperDescriptionAccordion({ title, year, authorsList, ab
             <div className = {`${isActive ? "max-h-auto" : "max-h-0"} ${inter.className} overflow-hidden transition-[max-height]  duration-200 `}>
                 <div className='flex flex-col space-y-3'>
                     <div className = "my-2">
-                        <p className = "text-justify">
-                            {abstract}
-                        </p>
+                        <p
+                            className = "text-justify"
+                            dangerouslySetInnerHTML = {{ __html: abstract || "" }}
+                        />
                     </div>
                     <div className = "flex flow-row justify-items-start space-x-4 overflow-hidden pt-5">
                         <DownloadButton
@@ -81,22 +84,24 @@ export default function PaperDescriptionAccordion({ title, year, authorsList, ab
                             )
                         })}
                     </div>
-                    <div className="flex flex-row justify-items-start space-x-4 overflow-hidden pt-2 pb-5">
-                        <div className="font-bold py-2 text-sm">
-                            Media:
+                    {hasMediaLinks && (
+                        <div className="flex flex-row justify-items-start space-x-4 overflow-hidden pt-2 pb-5">
+                            <div className="font-bold py-2 text-sm">
+                                Media:
+                            </div>
+                            {mediaLinks.map((media, index) => {
+                                return(
+                                    <div key = {index}>
+                                    <GeneralHoverButton
+                                        buttonText = {media.mediaPubName}
+                                        link = {media.mediaLink}
+                                        newTabOpt = {media.buttonNewTabOpt}
+                                    />
+                                    </div>
+                                )
+                            })}
                         </div>
-                        {mediaLinks.map((media, index) => {
-                            return(
-                                <div key = {index}>
-                                <GeneralHoverButton
-                                    buttonText = {media.mediaPubName}
-                                    link = {media.mediaLink}
-                                    newTabOpt = {media.buttonNewTabOpt}
-                                />
-                                </div>
-                            )
-                        })}
-                    </div>
+                    )}
 
                 </div>
                 
